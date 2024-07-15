@@ -16,9 +16,9 @@ public abstract class ProgServer extends Program {
 	private final int    ClientPort1   = 23451;
 	private final int    ClientPort2   = 23452;
 	private final int    ClientPort3   = 23453;
-	private final int    ClientPort4   = 23454;
-	private final int    ClientPort5   = 23455;
-	private final int    ClientPort6   = 23456;
+//	private final int    ClientPort4   = 23454;
+//	private final int    ClientPort5   = 23455;
+//	private final int    ClientPort6   = 23456;
 
 	private final int    OwnerPort   = 23457;
 
@@ -30,9 +30,9 @@ public abstract class ProgServer extends Program {
 	protected Sender snder1;
 	protected Sender snder2;
 	protected Sender snder3;
-	protected Sender snder4;
-	protected Sender snder5;
-	protected Sender snder6;
+//	protected Sender snder4;
+//	protected Sender snder5;
+//	protected Sender snder6;
 	protected Sender snderown;
 
 	protected int otNumOfPairs;
@@ -63,12 +63,12 @@ public abstract class ProgServer extends Program {
 		System.out.println("waiting for client2 to connect");
 		sock3 = new ServerSocket(ClientPort3);            // create socket and bind to port
 		System.out.println("waiting for client3 to connect");
-		sock4 = new ServerSocket(ClientPort4);            // create socket and bind to port
-		System.out.println("waiting for client4 to connect");
-		sock5 = new ServerSocket(ClientPort5);            // create socket and bind to port
-		System.out.println("waiting for client5 to connect");
-		sock6 = new ServerSocket(ClientPort6);            // create socket and bind to port
-		System.out.println("waiting for client6 to connect");
+//		sock4 = new ServerSocket(ClientPort4);            // create socket and bind to port
+//		System.out.println("waiting for client4 to connect");
+//		sock5 = new ServerSocket(ClientPort5);            // create socket and bind to port
+//		System.out.println("waiting for client5 to connect");
+//		sock6 = new ServerSocket(ClientPort6);            // create socket and bind to port
+//		System.out.println("waiting for client6 to connect");
 
 		sockown = new ServerSocket(OwnerPort);            // create socket and bind to port
 		System.out.println("waiting for owner to connect");
@@ -81,12 +81,12 @@ public abstract class ProgServer extends Program {
 			System.out.println("client2 has connected");
 			clientSocket3 = sock3.accept();                   // wait for client to connect
 			System.out.println("client3 has connected");
-			clientSocket4 = sock4.accept();
-			System.out.println("client4 has connected");
-			clientSocket5 = sock5.accept();                   // wait for client to connect
-			System.out.println("client5 has connected");
-			clientSocket6 = sock6.accept();
-			System.out.println("client6 has connected");
+//			clientSocket4 = sock4.accept();
+//			System.out.println("client4 has connected");
+//			clientSocket5 = sock5.accept();                   // wait for client to connect
+//			System.out.println("client5 has connected");
+//			clientSocket6 = sock6.accept();
+//			System.out.println("client6 has connected");
 			ownerSocket = sockown.accept();                   // wait for client to connect
 			System.out.println("owner has connected");
 
@@ -98,12 +98,12 @@ public abstract class ProgServer extends Program {
 			CountingInputStream cis2 = new CountingInputStream(clientSocket2.getInputStream());
 			CountingOutputStream cos3 = new CountingOutputStream(clientSocket3.getOutputStream());
 			CountingInputStream cis3 = new CountingInputStream(clientSocket3.getInputStream());
-			CountingOutputStream cos4 = new CountingOutputStream(clientSocket4.getOutputStream());
-			CountingInputStream cis4 = new CountingInputStream(clientSocket4.getInputStream());
-			CountingOutputStream cos5 = new CountingOutputStream(clientSocket5.getOutputStream());
-			CountingInputStream cis5 = new CountingInputStream(clientSocket5.getInputStream());
-			CountingOutputStream cos6 = new CountingOutputStream(clientSocket6.getOutputStream());
-			CountingInputStream cis6 = new CountingInputStream(clientSocket6.getInputStream());
+//			CountingOutputStream cos4 = new CountingOutputStream(clientSocket4.getOutputStream());
+//			CountingInputStream cis4 = new CountingInputStream(clientSocket4.getInputStream());
+//			CountingOutputStream cos5 = new CountingOutputStream(clientSocket5.getOutputStream());
+//			CountingInputStream cis5 = new CountingInputStream(clientSocket5.getInputStream());
+//			CountingOutputStream cos6 = new CountingOutputStream(clientSocket6.getOutputStream());
+//			CountingInputStream cis6 = new CountingInputStream(clientSocket6.getInputStream());
 			CountingOutputStream cosown = new CountingOutputStream(ownerSocket.getOutputStream());
 			CountingInputStream cisown = new CountingInputStream(ownerSocket.getInputStream());
 
@@ -115,12 +115,12 @@ public abstract class ProgServer extends Program {
 			ProgCommon.ois2 = new ObjectInputStream(cis2);
 			ProgCommon.oos3 = new ObjectOutputStream(cos3);
 			ProgCommon.ois3 = new ObjectInputStream(cis3);
-			ProgCommon.oos4 = new ObjectOutputStream(cos4);
-			ProgCommon.ois4 = new ObjectInputStream(cis4);
-			ProgCommon.oos5 = new ObjectOutputStream(cos5);
-			ProgCommon.ois5 = new ObjectInputStream(cis5);
-			ProgCommon.oos6 = new ObjectOutputStream(cos6);
-			ProgCommon.ois6 = new ObjectInputStream(cis6);
+//			ProgCommon.oos4 = new ObjectOutputStream(cos4);
+//			ProgCommon.ois4 = new ObjectInputStream(cis4);
+//			ProgCommon.oos5 = new ObjectOutputStream(cos5);
+//			ProgCommon.ois5 = new ObjectInputStream(cis5);
+//			ProgCommon.oos6 = new ObjectOutputStream(cos6);
+//			ProgCommon.ois6 = new ObjectInputStream(cis6);
 
 
 			ProgCommon.oosown = new ObjectOutputStream(cosown);
@@ -150,14 +150,14 @@ public abstract class ProgServer extends Program {
 		ProgCommon.oos3.close();                          // close everything
 		ProgCommon.ois3.close();
 
-		ProgCommon.oos4.close();                          // close everything
-		ProgCommon.ois4.close();
+//		ProgCommon.oos4.close();                          // close everything
+//		ProgCommon.ois4.close();
 
-		ProgCommon.oos5.close();                          // close everything
-		ProgCommon.ois5.close();
+//		ProgCommon.oos5.close();                          // close everything
+//		ProgCommon.ois5.close();
 
-		ProgCommon.oos6.close();                          // close everything
-		ProgCommon.ois6.close();
+//		ProgCommon.oos6.close();                          // close everything
+//		ProgCommon.ois6.close();
 
 
 		ProgCommon.oosown.close();                          // close everything
@@ -175,14 +175,14 @@ public abstract class ProgServer extends Program {
 		clientSocket3.close();
 		sock3.close();
 
-		clientSocket4.close();
-		sock4.close();
+//		clientSocket4.close();
+//		sock4.close();
 
-		clientSocket5.close();
-		sock5.close();
+//		clientSocket5.close();
+//		sock5.close();
 
-		clientSocket6.close();
-		sock6.close();
+//		clientSocket6.close();
+//		sock6.close();
 
 		ownerSocket.close();
 		sockown.close();
@@ -194,9 +194,9 @@ public abstract class ProgServer extends Program {
 		snder1 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois1, ProgCommon.oos1);
 		snder2 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois2, ProgCommon.oos2);
 		snder3 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois3, ProgCommon.oos3);
-		snder4 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois4, ProgCommon.oos4);
-		snder5 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois5, ProgCommon.oos5);
-		snder6 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois6, ProgCommon.oos6);
+//		snder4 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois4, ProgCommon.oos4);
+//		snder5 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois5, ProgCommon.oos5);
+//		snder6 = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.ois6, ProgCommon.oos6);
 		snderown = new NPOTSender(otNumOfPairs, otMsgBitLength, ProgCommon.oisown, ProgCommon.oosown);
 		StopWatch.taskTimeStamp("OT preparation");
 	}

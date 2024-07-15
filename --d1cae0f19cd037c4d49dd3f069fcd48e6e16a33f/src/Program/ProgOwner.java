@@ -22,9 +22,9 @@ public abstract class ProgOwner extends Program {
     private final int    ClientPort1_own   = 23461;
     private final int    ClientPort2_own   = 23462;
     private final int    ClientPort3_own   = 23463;
-    private final int    ClientPort4_own   = 23464;
-    private final int    ClientPort5_own   = 23465;
-    private final int    ClientPort6_own   = 23466;
+//    private final int    ClientPort4_own   = 23464;
+//    private final int    ClientPort5_own   = 23465;
+//    private final int    ClientPort6_own   = 23466;
 
 
 
@@ -65,15 +65,15 @@ public abstract class ProgOwner extends Program {
         sleep(20);
 
         clientSocket3_own = new java.net.Socket(serverIPname, ClientPort3_own);          // create socket and connect
-        sleep(20);
+//        sleep(20);
+//
+//        clientSocket4_own = new java.net.Socket(serverIPname, ClientPort4_own);          // create socket and connect
+//        sleep(20);
 
-        clientSocket4_own = new java.net.Socket(serverIPname, ClientPort4_own);          // create socket and connect
-        sleep(20);
-
-        clientSocket5_own = new java.net.Socket(serverIPname, ClientPort5_own);          // create socket and connect
-        sleep(20);
-
-        clientSocket6_own = new java.net.Socket(serverIPname, ClientPort6_own);          // create socket and connect
+//        clientSocket5_own = new java.net.Socket(serverIPname, ClientPort5_own);          // create socket and connect
+//        sleep(20);
+//
+//        clientSocket6_own = new java.net.Socket(serverIPname, ClientPort6_own);          // create socket and connect
 
 
 //		ProgCommon.oos = new java.io.ObjectOutputStream(sock.getOutputStream());
@@ -86,12 +86,12 @@ public abstract class ProgOwner extends Program {
         ProgCommon.ois2 = new java.io.ObjectInputStream(clientSocket2_own.getInputStream());
         ProgCommon.oos3 = new java.io.ObjectOutputStream(clientSocket3_own.getOutputStream());
         ProgCommon.ois3 = new java.io.ObjectInputStream(clientSocket3_own.getInputStream());
-        ProgCommon.oos4 = new java.io.ObjectOutputStream(clientSocket4_own.getOutputStream());
-        ProgCommon.ois4 = new java.io.ObjectInputStream(clientSocket4_own.getInputStream());
-        ProgCommon.oos5 = new java.io.ObjectOutputStream(clientSocket5_own.getOutputStream());
-        ProgCommon.ois5 = new java.io.ObjectInputStream(clientSocket5_own.getInputStream());
-        ProgCommon.oos6 = new java.io.ObjectOutputStream(clientSocket6_own.getOutputStream());
-        ProgCommon.ois6 = new java.io.ObjectInputStream(clientSocket6_own.getInputStream());
+//        ProgCommon.oos4 = new java.io.ObjectOutputStream(clientSocket4_own.getOutputStream());
+//        ProgCommon.oos5 = new java.io.ObjectOutputStream(clientSocket5_own.getOutputStream());
+//        ProgCommon.ois5 = new java.io.ObjectInputStream(clientSocket5_own.getInputStream(
+////        ProgCommon.ois4 = new java.io.ObjectInputStream(clientSocket4_own.getInputStream());));
+//        ProgCommon.oos6 = new java.io.ObjectOutputStream(clientSocket6_own.getOutputStream());
+//        ProgCommon.ois6 = new java.io.ObjectInputStream(clientSocket6_own.getInputStream());
 
         ProgCommon.oosown = new java.io.ObjectOutputStream(sockown.getOutputStream());
         ProgCommon.oisown = new java.io.ObjectInputStream(sockown.getInputStream());
@@ -116,17 +116,17 @@ public abstract class ProgOwner extends Program {
         ProgCommon.ois3.close();
         clientSocket3_own.close();
 
-        ProgCommon.oos4.close();                                                   // close everything
-        ProgCommon.ois4.close();
-        clientSocket4_own.close();
+//        ProgCommon.oos4.close();                                                   // close everything
+//        ProgCommon.ois4.close();
+//        clientSocket4_own.close();
 
-        ProgCommon.oos5.close();                                                   // close everything
-        ProgCommon.ois5.close();
-        clientSocket5_own.close();
+//        ProgCommon.oos5.close();                                                   // close everything
+//        ProgCommon.ois5.close();
+//        clientSocket5_own.close();
 
-        ProgCommon.oos6.close();                                                   // close everything
-        ProgCommon.ois6.close();
-        clientSocket6_own.close();
+//        ProgCommon.oos6.close();                                                   // close everything
+//        ProgCommon.ois6.close();
+//        clientSocket6_own.close();
 
         ProgCommon.oosown.close();                                                   // close everything
         ProgCommon.oisown.close();
